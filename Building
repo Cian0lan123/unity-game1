@@ -1,0 +1,43 @@
+using UnityEngine;
+using System.Collections;
+
+public class Building : MonoBehaviour {
+	public GameObject guideline;
+	public GameObject block;
+	public bool BuildGuide;
+	public Transform Empty;
+	// Use this for initialization
+	void Start () {
+		guideline.SetActive (false);
+		block.SetActive (false);
+		BuildGuide = false;
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		if (Input.GetKey (KeyCode.E)) 
+			{
+			guideline.SetActive (true);
+			BuildGuide = true;
+			} 
+		else if (BuildGuide == true && Input.GetMouseButtonDown (0)) 
+			{
+			guideline.SetActive(false);
+			block.SetActive(true);
+			Instantiate(block,Empty.position,Empty.rotation);
+			block.transform.parent = null;
+			BuildGuide = false;
+			}
+		}
+	}
+
+
+/* So this ones a little bit trickier, basically i have two different cubes in the game,
+which you have to assign to the game objects. Make two cubes, and look at where you attached the script
+to the player, you'll see two boxes labelled 'guideline' and 'block'. drag the two cubes from the hierarchy
+to these spots, and then make the two blocks "children" of the player. This means that where the player will
+move, the blocks move too. To make a block a child of another block, drag the child block in the hierarchy
+onto the other block. you'll notice a dropdown menu is made and the child is below the "parent". Don't 
+worry too much about this stuff, its a little bit tricky. Try setting it up, and if it works start messing
+around with the script. Even if you mess it up its saved here. Take lines out and try and run the code, 
+you'll quickly learn what does what. */
