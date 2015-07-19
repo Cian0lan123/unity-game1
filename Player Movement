@@ -14,3 +14,12 @@ public class PlayerMovement : MonoBehaviour {
 		transform.Rotate ( 0f,Input.GetAxis ("Horizontal"),0f);
 	}
 }
+
+/*This is for player movement, so transform is any sort of movement whether it be 
+rotating or moving around, and you see i just add different endings, 
+like translate is to physically move, and rotate is to obviously rotate. 
+I use one variable called speed, so i can adjust the players speed really easily. 
+The brackets after the two translates are called method overloading, 
+it means putting your own inputs and values to an action in code, so i
+put the input as "vertical" for movement, and horizontal for rotating, 
+meaning if i press the left and right arrow ill turn, and the up and down ill actually move! */
