@@ -1,0 +1,38 @@
+using UnityEngine;
+using System.Collections;
+
+public class RemoveBlock : MonoBehaviour {
+
+	public GameObject block;
+
+	//private int blockClone = EditorUtility.InstanceIDToObject();
+	// Use this for initialization
+	void Start () {
+	
+	}
+	
+	// Update is called once per frame
+	void Update()
+	{
+		if (Input.GetMouseButtonDown(0))
+		{
+			RaycastHit hitInfo = new RaycastHit();
+			bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo);
+			if (hit) 
+			{
+
+				if (hitInfo.transform.gameObject.tag == "Block" )
+				{
+						Destroy(hitInfo.transform.gameObject);
+
+				} 
+			
+	}
+}
+	}
+}
+
+
+/* This is the code that will detect a click and remove the block you clicked. By far the most advanced of the 3-4 pieces
+of code I've put up. Raycast is almost all about detecting where you clicked on the screen, and using that info to know
+what to destroy. I won't go into detail about how it works, its a bit too ahead of where you are now. */
