@@ -1,0 +1,25 @@
+using UnityEngine;
+using System.Collections;
+
+public class ErrorsGalore : MonoBehaviour {
+
+
+	public int num1 = 5f;
+	public string hello = 5f;
+	public float result;
+
+	// Use this for initialization
+	void Start () {
+
+	}
+	
+	// Update is called once per frame
+	float Update () {
+
+			result = num1 + hello;
+
+			Debug.Log (result);
+		}
+
+	}
+{
